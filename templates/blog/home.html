@@ -1,0 +1,12 @@
+{% extends 'blog/main.html' %}
+    {% block main_section %}
+        {% for post in news %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text }}</p>
+            {% if post.auther == 'Василий' %}
+                <p>Автор: Админ</p>
+            {% else %}
+                <p>Автор: {{ post.auther }}</p>
+            {% endif %}
+        {% endfor %}
+    {% endblock %}
